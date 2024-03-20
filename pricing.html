@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/pricing.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pricing</title>
+  </head>
+  <body>
+    <div class="right">
+      <div>
+        <img
+          src="images/Screenshot_from_2024-03-18_13-00-06-removebg-preview.png"
+          width="200"
+        />
+      </div>
+      <nav class="hero__right">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./contact.html">Contact us</a></li>
+          <li><a href="./Explore.html">Explore</a></li>
+          <li><a href="./pricing.html">Pricing</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <header>
+      <h1>Our Pricing</h1>
+    </header>
+    <main>
+      <section class="pricing-option" id="guided-tours">
+        <h2>Guided Tours</h2>
+        <p>
+          Experience the wonders of the world with our expert guides leading the
+          way.
+        </p>
+        <h3>$50 per person</h3>
+        <button class="book-now-btn">Book Now</button>
+      </section>
+      <section class="pricing-option" id="customized-itineraries">
+        <h2>Customized Itineraries</h2>
+        <p>
+          Tailor your travel experience to suit your interests, preferences, and
+          schedule.
+        </p>
+        <h3>Starting from $100</h3>
+        <button class="book-now-btn">Book Now</button>
+      </section>
+      <section class="pricing-option" id="private-tours">
+        <h2>Private Tours</h2>
+        <p>
+          Enjoy the flexibility and exclusivity of a private tour with your own
+          dedicated guide.
+        </p>
+        <h3>Starting from $200</h3>
+        <button class="book-now-btn">Book Now</button>
+      </section>
+      <section class="pricing-option" id="educational-programs">
+        <h2>Educational Programs</h2>
+        <p>
+          Explore and learn with our educational programs for students,
+          educators, and lifelong learners.
+        </p>
+        <h3>$75 per person</h3>
+        <button class="book-now-btn">Book Now</button>
+      </section>
+
+      <section class="pricing-option" id="Booking-form">
+        <form class="Bkn__bkn">
+          <h2>Booking Form</h2>
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" />
+
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" />
+
+          <label for="pricingOption">Select Pricing Option:</label>
+          <select id="pricingOption">
+            <option value="guided-tours">Guided Tours - $50 per person</option>
+            <option value="customized-itineraries">
+              Customized Itineraries - Starting from $100
+            </option>
+            <option value="private-tours">
+              Private Tours - Starting from $200
+            </option>
+            <option value="educational-programs">
+              Educational Programs - $75 per person
+            </option>
+          </select>
+
+          <button type="button" onclick="calculateAmount()">
+            Calculate Amount
+          </button>
+        </form>
+
+        <div id="result"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer__container">
+          <div class="footer__logo">
+            <img
+              src="images/Screenshot_from_2024-03-18_13-00-06-removebg-preview.png"
+              width="250"
+            />
+            <p>Stay Connected</p>
+            <div class="footer__icons">
+              <img src="images/facebook.png" width="50px" class="icon" />
+              <img src="images/instagram.png" width="50px" class="icon" />
+              <img src="images/twitter.png" width="50px" class="icon" />
+              <img src="images/linkedin.png" width="50px" class="icon" />
+            </div>
+          </div>
+          <div class="footer__links">
+            <p>Quick Links</p>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="./services.html">services</a></li>
+              <li><a href="./contact.html">contact us</a></li>
+              <li><a href="./Explore.html">Explore</a></li>
+              <li><a href="./pricing.html">pricing</a></li>
+            </ul>
+          </div>
+          <div class="partners">
+            <p>PARTNERS</p>
+            <img
+              src="images/Screenshot from 2024-03-18 13-02-58.png"
+              width="600"
+              height="40vh"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Define bookNow function
+      function bookNow(option) {
+        alert("You have booked: " + option);
+      }
+
+      // Add event listeners to all buttons with class 'book-now-btn'
+      document.querySelectorAll(".book-now-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Get the corresponding section id
+          let sectionId = this.parentElement.id;
+          // Call bookNow function with sectionId
+          bookNow(sectionId);
+        });
+      });
+
+      function calculateAmount() {
+        const startDate = new Date(document.getElementById("startDate").value);
+        const endDate = new Date(document.getElementById("endDate").value);
+        const pricingOption = document.getElementById("pricingOption").value;
+
+        // Calculate number of days
+        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
+
+        // Calculate amount based on pricing option and number of days
+        let amount = 0;
+        switch (pricingOption) {
+          case "guided-tours":
+            amount = diffDays * 50;
+            break;
+          case "customized-itineraries":
+            amount = diffDays * 100;
+            break;
+          case "private-tours":
+            amount = diffDays * 200;
+            break;
+          case "educational-programs":
+            amount = diffDays * 75;
+            break;
+        }
+
+        // Display result
+        document.getElementById(
+          "result"
+        ).textContent = `Total Amount for ${diffDays} days: $${amount}`;
+      }
+    </script>
+  </body>
+</html>

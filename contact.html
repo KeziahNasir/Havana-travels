@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/contact.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div class="right">
+      <div>
+        <img
+          src="images/Screenshot_from_2024-03-18_13-00-06-removebg-preview.png"
+          width="200"
+        />
+      </div>
+      <nav class="hero__right">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./contact.html">Contact us</a></li>
+          <li><a href="./Explore.html">Explore</a></li>
+          <li><a href="./pricing.html">Pricing</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="contact">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+          Have questions or want to book a tour? Contact us using the form
+          below.
+        </p>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="Phone no">Phone no</label>
+          <input type="phone no" id="phone" name="phone no" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" id="submit-btn">Send Message</button>
+        </form>
+        <div id="success-message" class="hidden">
+          Your message has been sent successfully!
+        </div>
+        <div id="error-message" class="hidden">
+          An error occurred, please try again later.
+        </div>
+      </div>
+      <div class="beep"></div>
+    </div>
+  </body>
+</html>
