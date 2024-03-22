@@ -14,6 +14,6 @@
     const logButton = document.querySelector(".submit");
 
     logButton.addEventListener("click", function () {
-      window.location.href=`http://127.0.0.1:5500/services.html`;
+      window.location.href=`${window.location.origin}/services.html`;
     });
 // });
