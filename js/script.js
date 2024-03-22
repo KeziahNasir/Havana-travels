@@ -26,6 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const bookNowButton = document.querySelector(".bbtn");
 
   bookNowButton.addEventListener("click", function () {
-    alert("Thank you for booking with Havana Travels!");
+    window.location.href=`login.html`
   });
 });

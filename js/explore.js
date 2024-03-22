@@ -32,4 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
             // window.location.href = "hotel_details.html?hotel=" + encodeURIComponent(hotelName);
         });
     });
-})
+});

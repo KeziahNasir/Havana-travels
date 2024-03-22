@@ -128,3 +128,14 @@ button:hover {
 .contact-info li i {
   margin-right: 5px;
 } 
+
+
+footer {
+  background-color: #cfe7cf;
+  color:#000;
+  text-align: center;
+  padding: 20px;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+}
