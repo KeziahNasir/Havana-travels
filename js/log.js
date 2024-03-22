@@ -14,6 +14,6 @@
     const logButton = document.querySelector(".submit");
 
     logButton.addEventListener("click", function () {
-      window.location.href=`${window.location.origin}/services.html`;
+      window.location.href=`${window.location.origin}/Havana-travels/services.html`;
     });
 // });

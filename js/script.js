@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const bookNowButton = document.querySelector(".bbtn");
 
   bookNowButton.addEventListener("click", function () {
-    window.location.href=`login.html`
+    window.location.href=`${window.location.origin}/Havana-travels/login.html`;
+
   });
 });
